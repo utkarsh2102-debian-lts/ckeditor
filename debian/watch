@@ -1,0 +1,9 @@
+version=3
+
+#http://ckeditor.com/download ckeditor_(.*)\.tar\.gz
+
+opts=\
+repacksuffix=+dfsg,\
+dversionmangle=s/\+dfsg\d*$//,\
+  https://github.com/ckeditor/ckeditor-dev/releases \
+  (?:.*/)?v?(\d[\d\.]*)\.tar\.gz

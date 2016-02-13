@@ -1,0 +1,17 @@
+Last-Update: 2016-02-03
+Forwarded: not-needed
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Description: build corrections: skip 'debian' dir.
+
+--- a/dev/builder/build-config.js
++++ b/dev/builder/build-config.js
+@@ -7,8 +7,9 @@
+ 
+ var CKBUILDER_CONFIG = {
+ 	skin: 'moono',
+ 	ignore: [
++		'debian',
+ 		'bender.js',
+ 		'.bender',
+ 		'bender-err.log',
+ 		'bender-out.log',

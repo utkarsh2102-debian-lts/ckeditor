@@ -1,0 +1,12 @@
+## False-positives:
+
+### contains minified "core/ckeditor_base.js":
+source-is-missing ckeditor.js *
+
+### long lines in translations:
+source-is-missing plugins/a11yhelp/dialogs/lang/*.js *
+source-contains-prebuilt-javascript-object plugins/a11yhelp/dialogs/lang/*.js *
+
+### long lines of embedded HTML:
+source-is-missing tests/plugins/embedbase/_assets/twitter1.js *
+source-contains-prebuilt-javascript-object tests/plugins/embedbase/_assets/twitter1.js *

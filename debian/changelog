@@ -1,0 +1,211 @@
+ckeditor (4.5.7+dfsg-2) unstable; urgency=medium
+
+  * Run "ckbuilder" through "java -jar" as "jarwrapper" does not work on
+    buildd servers due to problem with "binfmt_misc" module (Closes: #814403).
+  * Build under "xvfb-run" to avoid potential error on generating image.
+  * Build-Depends += ",xvfb, xauth".
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 13 Feb 2016 13:08:13 +1100
+
+ckeditor (4.5.7+dfsg-1) unstable; urgency=medium
+
+  * New upstream release [February 2016].
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 12 Feb 2016 11:59:51 +1100
+
+ckeditor (4.5.6+dfsg-1) unstable; urgency=medium
+
+  * New upstream release [December 2015] (Closes: #808775).
+  * Build using CKbuilder (Closes: #802738).
+  * Build-Depends:
+    - closure-compiler
+    + ckbuilder
+  * control:
+    + Fixed description. Thanks, Christopher Hagar (Closes: #790253).
+    + Standards-Version: 3.9.7.
+    + Modernised Vcs links.
+  * "debian/watch" improvements.
+  * Added lintian-overrides.
+  * Set myself as Maintainer; moved Frank Habermann to Uploaders.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 10 Feb 2016 20:25:00 +1100
+
+ckeditor (4.4.4+dfsg1-3) unstable; urgency=medium
+
+  * Bug fix: "missing core/_bootstrap.js" (Closes: #768570).
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Mon, 10 Nov 2014 22:48:39 +0100
+
+ckeditor (4.4.4+dfsg1-2) unstable; urgency=high
+
+  * Add core/ subdirectory to packaged files (Closes: #753668).
+  * Depend to libjs-highlight.js (Closes: #765003).
+  * Fix description (Closes: #761082).
+  * Fix example path.
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Thu, 23 Oct 2014 22:20:38 +0200
+
+ckeditor (4.4.4+dfsg1-1) unstable; urgency=high
+
+  * New upstream release.
+  * Bug fix: "CVE-2014-5191", thanks to Moritz Muehlenhoff
+    (Closes: #760736). Cross-site scripting (XSS) vulnerability
+    in the Preview plugin before 4.4.3 in CKEditor allows
+    remote attackers to inject arbitrary web script
+    or HTML via unspecified vectors.
+  * Use packaged libjs-highlight.
+  * Bug fix: "CKEDITOR is not defined", thanks to Louis-David
+    Mitterrand. (Closes: #756155).
+  * Remove uicolor plugin for security and dfsg (sourceless)
+    reasons.
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Sat, 13 Sep 2014 19:34:59 +0200
+
+ckeditor (4.3.5+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #741337).
+  * Upgrade debian/copyright in order to use uscan
+    automatic repack of non free file.
+  * Add myself as uploader with Frank Habermann permission.
+  * Acknowledge NMU.
+  * Manually build ckeditor.js.
+  * Build from git in order to avoid sourceless file (Closes: #742990).
+  * Bug fix: "missing adapters/jquery.js file", thanks to Jérémy Lal
+    (Closes: #666167).
+
+ -- Bastien Roucariès <roucaries.bastien+debian@gmail.com>  Sun, 11 May 2014 17:13:52 +0200
+
+ckeditor (4.3.0+dfsg0-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove dependency to libjs-yui
+    - it was not used, because the uicolor plugin was not shipped
+      (Closes: #641808)
+    - No need to migrate to yui3 (Closes: #733966)
+  * Remove sourceless files (Closes: #735345)
+
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 29 Jan 2014 21:23:48 +0100
+
+ckeditor (4.3.0-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 01 Dec 2013 22:14:00 +0200
+
+ckeditor (4.2.1-1) unstable; urgency=low
+
+  * new upstream release
+  * changed Standars-Version to 3.9.4
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 06 Oct 2013 20:33:00 +0200
+
+ckeditor (3.6.3-1) unstable; urgency=low
+
+  * new upstream release
+  * changed Standars-Version to 3.9.3
+  * added DM-Upload-Allowed to control
+  * using libjs-swfobject instead of integrated lib
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 21 Apr 2012 22:33:00 +0200
+
+ckeditor (3.6.1-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 9 Jul 2011 22:43:00 +0200
+
+ckeditor (3.6.0-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 21 May 2011 21:39:00 +0200
+
+ckeditor (3.5.2-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 06 Mar 2011 22:29:00 +0200
+
+ckeditor (3.5.1-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 08 Feb 2011 22:17:00 +0200
+
+ckeditor (3.5.0-1) experimental; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 30 Dec 2010 21:20:00 +0200
+
+ckeditor (3.4.2-1) experimental; urgency=low
+
+  * new upstream release (Closes: #603616)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 18 Nov 2010 23:01:00 +0200
+
+ckeditor (3.4-1) experimental; urgency=low
+
+  * new upstream release
+  * changed Standars-Version to 3.9.1
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 21 Aug 2010 21:23:00 +0200
+
+ckeditor (3.3.1-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 10 Jun 2010 23:16:00 +0200
+
+ckeditor (3.3-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Mon, 31 May 2010 21:27:00 +0200
+
+ckeditor (3.2.1-1) unstable; urgency=low
+
+  * new upstream release
+  * set debian source version to 1.0
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 10 Apr 2010 19:55:00 +0200
+
+ckeditor (3.2-1) unstable; urgency=low
+
+  * new upstream release
+  * changed Standars-Version to 3.8.4
+  * added watch file (Closes: #571456)
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sun, 28 Jan 2010 20:40:00 +0200
+
+ckeditor (3.1-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Thu, 07 Jan 2010 22:20:00 +0200
+
+ckeditor (3.0.2-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Fri, 18 Dec 2009 21:22:00 +0200
+
+ckeditor (3.0.1-1) unstable; urgency=low
+
+  * new upstream release
+    - Same keyboard navigation issues have been fixed
+    - The editor may have cause the page to scroll on load on some situations
+    - Empty paragraphs were being created when adding a table to an empty
+      document
+    - Dialogs may have change alerts showing even if nothing were getting
+      modified
+    - Loading the "source" version of the editor now forces loading the
+      source code of the plugins as well
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Sat, 17 Oct 2009 19:20:00 +0200
+
+ckeditor (3.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 25 Aug 2009 23:15:00 +0200

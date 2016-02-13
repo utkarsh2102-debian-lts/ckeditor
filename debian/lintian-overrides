@@ -1,0 +1,2 @@
+## False-positive, not libjs-jquery:
+embedded-javascript-library usr/share/javascript/ckeditor/adapters/jquery.js *

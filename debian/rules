@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE = 1
+
+PKD   = $(abspath $(dir $(MAKEFILE_LIST)))
+PKG   = $(word 2,$(shell dpkg-parsechangelog -l$(PKD)/changelog | grep ^Source))
+VER  ?= $(shell dpkg-parsechangelog -l$(PKD)/changelog | perl -ne 'print $$1 if m{^Version:\s*([\d\.]+)}')
+REV  ?= $(shell dpkg-parsechangelog -l$(PKD)/changelog | perl -ne 'print $$1 if m{^Version:.*?\-(\d\S*)}')
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	$(RM) -r dev/builder/_build builtsamples
+
+override_dh_auto_build:
+	dh_auto_build
+	cd dev/builder \
+        && xvfb-run \
+           java -jar /usr/share/ckbuilder/ckbuilder.jar \
+            --no-zip --no-tar --overwrite \
+            --version="$(VER)" --revision="$(REV)" \
+            --build ../../ _build
+
+	# update path for examples
+	cp -fr samples builtsamples
+	find builtsamples -type f -name '*.html' -exec sed -i 's,<script src="../ckeditor.js">,<script src="/usr/share/javascript/ckeditor/ckeditor.js">,g' {} \;
+
+override_dh_install:
+	dh_install
+	# remove internal files:
+	find debian/ckeditor/usr/share/javascript/ckeditor -type f -name '_*' -not -name '_bootstrap.js' -delete -printf 'removed %p\n'
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGES.md

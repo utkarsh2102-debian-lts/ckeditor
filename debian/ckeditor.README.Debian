@@ -1,0 +1,17 @@
+ckeditor for Debian
+------------------------
+
+The package installs all the files needed by ckeditor under
+`/usr/share/javascript/ckeditor'.
+
+It's pretty easy to use ckeditor within your webapp, you just have alias that
+directory to "ckeditor":
+
+    Alias /ckeditor/ /usr/share/javascript/ckeditor/
+    <Directory "/usr/share/javascript/ckeditor/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order allow,deny
+    </Directory>
+
+ -- Frank Habermann <lordlamer@lordlamer.de>  Tue, 25 Aug 2009 23:15:00 +0200

@@ -1,0 +1,6 @@
+dev/builder/_build/ckeditor/*.css		/usr/share/javascript/ckeditor
+dev/builder/_build/ckeditor/*.js		/usr/share/javascript/ckeditor
+dev/builder/_build/ckeditor/adapters		/usr/share/javascript/ckeditor
+dev/builder/_build/ckeditor/lang 		/usr/share/javascript/ckeditor
+dev/builder/_build/ckeditor/plugins		/usr/share/javascript/ckeditor
+dev/builder/_build/ckeditor/skins		/usr/share/javascript/ckeditor
