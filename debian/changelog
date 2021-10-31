@@ -1,3 +1,11 @@
+ckeditor (4.5.7+dfsg-2+deb9u1) stretch-security; urgency=high
+
+  * Non-maintainer upload by the LTS team.
+  * Add patch to fix CVE-2021-37695. (Closes: #992290)
+  * Add patch to fix CVE-2021-33829.
+
+ -- Utkarsh Gupta <utkarsh@debian.org>  Mon, 01 Nov 2021 00:00:05 +0530
+
 ckeditor (4.5.7+dfsg-2) unstable; urgency=medium
 
   * Run "ckbuilder" through "java -jar" as "jarwrapper" does not work on
